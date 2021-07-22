@@ -312,6 +312,11 @@ hl_wheel_joint:
     position: *default_pos_gain
     impedance: *default_imp_gain
 
+tof_camera_joint:
+  control_mode: 3B_motor_pos_ctrl
+  pid:
+    position: [100000.0, 0.0, 1.0]
+    
 right_hand:
   control_mode: 3B_motor_pos_ctrl
   pid: 
