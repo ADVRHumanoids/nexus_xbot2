@@ -37,7 +37,7 @@ joint_map:
   55: hr_ankle_yaw_joint
   56: hr_wheel_joint
   201: pow_board
-  110: head_motor1
-  111: head_motor2 
+  110: tof_camera_joint
+  #111: lidar_joint 
   116: right_hand
   126: left_hand
