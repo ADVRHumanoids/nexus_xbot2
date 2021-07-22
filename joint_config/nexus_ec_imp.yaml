@@ -7,7 +7,7 @@ definitions:
  - &default_pos_gain [100.0, 0.0, 5.0]
  - &imp_gain_arm_mid [500.0, 20.0, 1.0, 0.003, 0.90]
  - &imp_gain_arm_sm [200.0, 10.0, 1.0, 0.003, 0.90]
- - &imp_gain_leg_big [2000.0, 0.0, 1.0, 0.003, 0.90]
+ - &imp_gain_leg_big [2000.0, 20.0, 1.0, 0.005, 0.90]
  - &imp_gain_leg_mid [1000.0, 20.0, 1.0, 0.003, 0.90]
  - &imp_gain_leg_yaw [300.0, 10.0, 1.0, 0.003, 0.90]
  - &default_wheel [30.0, 0.0, 0.0]
@@ -307,12 +307,18 @@ hl_wheel_joint:
     velocity: *default_wheel
     position: *default_pos_gain
 
+tof_camera_joint:
+  control_mode: 3B_motor_pos_ctrl
+  pid:
+    position: [100000.0, 0.0, 1.0]
+
 right_hand:
   control_mode: 3B_motor_pos_ctrl
-  pid: 
+  pid:
     position: [100000.0 , 0.0 , 1.0]
 
 left_hand:
   control_mode: 3B_motor_pos_ctrl
   pid:
-    position: [100000.0 , 0.0 , 1.0]     
+    position: [100000.0 , 0.0 , 1.0]
+
