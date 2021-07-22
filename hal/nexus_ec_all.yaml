@@ -5,11 +5,11 @@ xbotcore_devices:
         thread: rt_main
         params:
             robot_name: &rn {value: NoNe, type: string}
-            ignore_id: {value: [110, 111], type: vector<int>}
+            ignore_id: {value: [111], type: vector<int>}
             config_ec_pos: &cfg_ec_pos 
                 value: $PWD/../joint_config/nexus_ec_pos.yaml
                 type: yamlfile
-            config_ec_imp: 
+            config_ec_imp: &cfg_ec_imp 
                 value: $PWD/../joint_config/nexus_ec_imp.yaml
                 type: yamlfile
             config_ec_idle: &cfg_ec_idle 
@@ -39,7 +39,7 @@ xbotcore_devices:
         params:
             robot_name: *rn
             config_ec_pos: *cfg_ec_pos
-            #config_ec_imp: *cfg_ec_imp
+            config_ec_imp: *cfg_ec_imp
             #config_ec_hybr: *cfg_ec_hybr
             config_ec_idle: *cfg_ec_idle
             joint_id_map: *jim
